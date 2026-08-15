@@ -1,5 +1,6 @@
-// Bounds for the editor/preview split, expressed as the left pane's fraction
-// of the container width.
+// Bounds for the editor/preview split, expressed as the leading pane's fraction
+// of the container width. The leading pane is the left one, or the right one
+// when the layout runs right-to-left.
 export const MIN_RATIO = 0.2
 export const MAX_RATIO = 0.8
 

@@ -21,11 +21,11 @@ describe('MarkdownViewer', () => {
 
     it('renders the preview right-to-left when the RTL layout is on', () => {
         const ref = createRef<HTMLDivElement>()
-        const { store, container } = renderWithStore(<MarkdownViewer refObj={ref} />)
+        const { store } = renderWithStore(<MarkdownViewer refObj={ref} />)
         act(() => { store.dispatch(commonActions.setCurrentFile(file)) })
 
-        expect(container.querySelector('.overflow-y-scroll')).toHaveAttribute('dir', 'ltr')
+        expect(ref.current).toHaveAttribute('dir', 'ltr')
         act(() => { store.dispatch(commonActions.setRtl(true)) })
-        expect(container.querySelector('.overflow-y-scroll')).toHaveAttribute('dir', 'rtl')
+        expect(ref.current).toHaveAttribute('dir', 'rtl')
     })
 })

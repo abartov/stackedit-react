@@ -8,6 +8,10 @@ describe('isRtlLanguage', () => {
         expect(isRtlLanguage('fa_IR')).toBe(true)
         expect(isRtlLanguage('UR')).toBe(true)
     })
+    it('recognises the superseded Hebrew and Yiddish codes', () => {
+        expect(isRtlLanguage('iw')).toBe(true)
+        expect(isRtlLanguage('ji')).toBe(true)
+    })
     it('treats left-to-right languages as such', () => {
         expect(isRtlLanguage('en')).toBe(false)
         expect(isRtlLanguage('de-DE')).toBe(false)

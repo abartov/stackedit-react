@@ -5,8 +5,9 @@ export type Direction = 'ltr' | 'rtl'
 
 export const RTL_STORAGE_KEY = 'rtl'
 
-// Primary language subtags of the scripts written right-to-left.
-const RTL_LANGUAGES = ['ar', 'arc', 'ckb', 'dv', 'fa', 'he', 'nqo', 'ps', 'sd', 'syr', 'ug', 'ur', 'yi']
+// Primary language subtags written in a right-to-left script. `iw` and `ji` are
+// the superseded codes for Hebrew and Yiddish, which some browsers still report.
+const RTL_LANGUAGES = ['ar', 'arc', 'ckb', 'dv', 'fa', 'he', 'iw', 'ji', 'nqo', 'ps', 'sd', 'syr', 'ug', 'ur', 'yi']
 
 export const isRtlLanguage = (language: string | null | undefined): boolean => {
     if (!language) {
